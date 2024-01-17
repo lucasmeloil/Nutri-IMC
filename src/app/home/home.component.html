@@ -1,0 +1,26 @@
+<!-- home.component.html -->
+<div class="container">
+  <div class="header">
+    <img class="logoimc" src="./../../assets/NEXUS-IMC-LOGO02.png" alt="Logo do Profissional">
+    <h1 class="title">Calculadora de IMC</h1>
+  </div>
+  <div class="content">
+    <form (ngSubmit)="calculateIMC()" #imcForm="ngForm">
+      <label for="patientName">Nome do Paciente:</label>
+      <input type="text" class="form-control" name="patientName" [(ngModel)]="patientName" required>
+
+      <label for="weight">Peso (kg):</label>
+      <input type="number" class="form-control" name="weight" [(ngModel)]="weight" required>
+
+      <label for="height">Altura (m):</label>
+      <input type="number" class="form-control" name="height" [(ngModel)]="height" required>
+<br>
+      <button type="submit" class="calculate-btn" [disabled]="!imcForm.form.valid">Calcular IMC</button>
+    </form>
+
+    <!-- Área para exibir a mensagem de erro -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>
