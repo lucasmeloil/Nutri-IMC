@@ -78,3 +78,24 @@ label {
   color: #333;
 
 }
+
+/* Adicione essas regras ao seu arquivo CSS */
+
+.calculate-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.calculate-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
