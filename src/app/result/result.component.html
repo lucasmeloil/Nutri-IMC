@@ -1,9 +1,14 @@
 <!-- result.component.html -->
 <div class="container mt-5">
-  <h2>Resultado do IMC</h2>
+  <h2 class="text-center">Resultado do IMC</h2>
   <p>O Índice de Massa Corporal (IMC) de {{ patientName }} é: {{ result | number: '1.2-2' }}</p>
 
-  <h3>Interpretação do IMC</h3>
+<p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
+
+  O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9.
+
+  Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela. Importante: siga os exemplos e use pontos como separadores.</p>
+  <h3 class="text-center">Interpretação do IMC</h3>
   <table class="table">
     <thead>
       <tr>
@@ -41,5 +46,7 @@
     </tbody>
   </table>
 
-  <button class="btn btn-primary" (click)="goBack()">Voltar</button>
+  <div class="d-flex justify-content-center mt-3">
+    <button class="btn btn-primary" (click)="goBack()">Voltar</button>
+  </div>
 </div>

@@ -5,7 +5,7 @@
     <h1 class="title">Calculadora de IMC</h1>
   </div>
   <div class="content">
-    <form (ngSubmit)="calculateIMC()" #imcForm="ngForm">
+    <form (ngSubmit)="calculateIMC()">
       <label for="patientName">Nome do Paciente:</label>
       <input type="text" class="form-control" name="patientName" [(ngModel)]="patientName" required>
 
@@ -14,13 +14,15 @@
 
       <label for="height">Altura (m):</label>
       <input type="number" class="form-control" name="height" [(ngModel)]="height" required>
-<br>
-      <button type="submit" class="calculate-btn" [disabled]="!imcForm.form.valid">Calcular IMC</button>
-    </form>
 
-    <!-- Área para exibir a mensagem de erro -->
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
+      <!-- Mensagem de erro para campos não preenchidos -->
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+
+      <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="calculate-btn">Calcular IMC</button>
+      </div>
+    </form>
   </div>
 </div>
